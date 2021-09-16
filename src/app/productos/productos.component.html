@@ -1,0 +1,49 @@
+<div>
+  <h2>{{tituloPagina}}</h2>
+  <div class="row">
+    <div class="col-2">Filtrar</div>
+    <div class="col-2">
+      <input type="text" [(ngModel)]="filtrarProductos")] >
+
+        filtrando por {{filtrarProductos}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <h2></h2>
+    </div>
+  </div>
+
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            <button (click)="toggleImagenes" >Imagen</button>
+          </th>
+          <th>Producto</th>
+          <th>Codigo de Producto</th>
+          <th>Disponible</th>
+          <th>Precio</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor= "let producto of productosFiltrados">
+          <td></td>
+          <td><img [src]="producto.imageUrl" alt=""></td>
+          <td>{{producto.nombre}}</td>
+          <td>{{producto.codigo}}</td>
+          <td>{{producto.disponibilidad}}</td>
+          <td>{{producto.precio}}</td>
+          <td>{{producto.rating}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
